@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .announcement-box {
+            width: 300px;
+            height: 50px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+        .announcements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            animation: scroll 12s infinite;
+        }
+        .announcements p {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        /* 定义上下滚动的关键帧动画 */
+        @keyframes scroll {
+            0% { top: 0; }
+            16% { top: 0; } /* 保持第一条公告停留2秒 */
+            20% { top: -50px; } /* 滚动到第二条 */
+            36% { top: -50px; } /* 保持第二条公告停留2秒 */
+            40% { top: -100px; } /* 滚动到第三条 */
+            56% { top: -100px; } /* 保持第三条公告停留2秒 */
+            60% { top: -150px; } /* 滚动到第四条 */
+            76% { top: -150px; } /* 保持第四条公告停留2秒 */
+            80% { top: -200px; } /* 滚动到第五条 */
+            96% { top: -200px; } /* 保持第五条公告停留2秒 */
+            100% { top: -250px; } /* 滚动到第一个公告的副本，实现无缝过渡 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="announcement-box">
+        <div class="announcements">
+            <p>公告 1</p>
+            <p>公告 2</p>
+            <p>公告 3</p>
+            <p>公告 4</p>
+            <p>公告 5</p>
+            <p>公告 1</p> <!-- 添加第一个公告的副本 -->
+        </div>
+    </div>
+
+</body>
+
+</html>
